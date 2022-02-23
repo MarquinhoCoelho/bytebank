@@ -1,0 +1,71 @@
+
+<p-card>
+
+
+  <p-table [value]="listaTransferencias" [(selection)]="selecionado1" dataKey="data" (onRowSelect)="onRowSelect($event)"
+    (onRowUnselect)="onRowUnselect($event)" [rows]="15" [showCurrentPageReport]="true" [paginator]="true"
+    [rowsPerPageOptions]="[5,15,50]" [scrollable]="true" scrollHeight="420px">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>
+          <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+        </th>
+        <th pSortableColumn="data">Data<p-sortIcon field="data"></p-sortIcon></th>
+        <th pSortableColumn="valor">Valor<p-sortIcon field="valor"></p-sortIcon></th>
+        <th pSortableColumn="destino">Destino<p-sortIcon field="destino"></p-sortIcon></th>
+        <!-- <th>id</th> -->
+        <th pSortableColumn="telefone">Telefone<p-sortIcon field="telefone"></p-sortIcon></th>
+        <th pSortableColumn="cpf">CPF<p-sortIcon field="cpf"></p-sortIcon></th>
+        <th pSortableColumn="uf">Estado<p-sortIcon field="uf"></p-sortIcon></th>
+        <th></th>
+
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-transferencia>
+      <tr mat>
+        <td>
+          <p-tableCheckbox [value]="transferencia"></p-tableCheckbox>
+        </td>
+        <td>{{transferencia.data | date: "short"}}</td>
+
+        <td>{{transferencia.valor | currency}}</td>
+        <td>{{transferencia.destino}}</td>
+        <!-- <td>{{transferencia.id}}</td> -->
+        <td>{{transferencia.telefone}}</td>
+        <td>{{transferencia.cpf}}</td>
+        <td>{{transferencia.uf}}</td>
+        <td>
+          <p-button type="button" (click)="modalEditar(transferencia) "  icon="pi pi-pencil"
+            styleClass="p-button-text p-button-warning"></p-button>
+          <p-button type="button" (click)="confirm(transferencia)" icon="pi pi-trash"
+            styleClass="p-button-rounded p-button-danger"></p-button>
+        </td>
+
+
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="paginatorleft">
+      <p-button type="button" icon="pi pi-plus" (click)="novaTransferencia()" styleClass="p-button-rounded p-button-outlined"></p-button>
+      <p-button type="button" icon="pi pi-trash" (click)="confirmDeletarTudo()" styleClass="p-button-raised p-button-rounded"></p-button>
+
+    </ng-template>
+
+
+    <ng-template pTemplate="paginatorright">
+      <p-button type="button" icon="pi pi-undo" (click)="refresh()" styleClass="p-button-text"></p-button>
+      <br><br>
+      <h4>Total: {{soma | currency}}</h4>
+
+    </ng-template>
+  </p-table>
+
+</p-card>
+
+<!-- Confirmação de Exclusão -->
+<p-confirmDialog header="Alerta" icon="pi pi-exclamation-triangle" [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width: '50vw'}"></p-confirmDialog>
+
+
+
+
+<!-- Não sei pra que serve -->
+<p-toast position="top-right"></p-toast>

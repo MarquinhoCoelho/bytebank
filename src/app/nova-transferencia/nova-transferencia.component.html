@@ -1,0 +1,43 @@
+<section class="">
+  <form class="formulario" (ngSubmit)="transferir()">
+
+    <h2 class="formulario__titulo">Nova Transferência</h2>
+
+    <div class="form-field">
+      <label class="form-field__label" for="valor" >valor</label>
+      <input type="number" pInputText name="valor" id="valor" [(ngModel)]="transferencia.valor">
+
+    </div>
+
+    <div class="form-field">
+      <label class="form-field__label" for="destino">destino</label>
+      <input type="text"  pInputText name="destino" id="destino" [(ngModel)]="transferencia.destino">
+    </div>
+
+    <div class="form-field">
+      <label class="form-field__label" for="telefone">Telefone</label>
+      <p-inputMask mask="(999) 99999-9999" type="text"  placeholder="(DDD) 99999-9999" name="telefone" id="telefone" [(ngModel)]="transferencia.telefone"></p-inputMask>
+
+    </div>
+
+    <div class="form-field">
+      <label class="form-field__label" for="cpf">CPF</label>
+      <p-inputMask mask="999.999.999-99" type="text"  placeholder="999.999.999-99" name="cpf" id="cpf" [(ngModel)]="transferencia.cpf"></p-inputMask>
+
+    </div>
+
+
+
+  <div class="form-field">
+    <p-dropdown [options]="estados" [(ngModel)]="transferencia.uf"  [ngModelOptions]="{standalone: true}" ></p-dropdown>
+  </div>
+
+    <div class="botao-wrapper">
+
+      <button class="botao" type="submit">Transferir</button>
+    </div>
+
+
+
+  </form>
+</section>

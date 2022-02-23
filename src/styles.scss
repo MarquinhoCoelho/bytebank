@@ -1,0 +1,62 @@
+:root {
+  --primary: #5588CC;
+  --secondary: #132A13;
+  --padding: 15px;
+  --cinza : #405040;
+  --cinza-claro: #dedede;
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+}
+
+.p-dialog-header{
+  color: #fff !important;
+  background-color: #137 !important;
+
+}
+
+.p-dialog-content{
+  padding-top: 25px !important;
+}
+
+body{
+  background-color: #FCFCFC;
+}
+
+a{
+  color: inherit;
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  max-width: 400px;
+  padding: 30px;
+  margin: 0 auto;
+
+}
+
+.ta{
+  text-align: center;
+}
+
+
+.p-card{
+  margin: 10px ;
+}
+
+.p-button-rounded {
+  margin-right: 10px !important;
+}
+
+
+.centro{
+
+  margin: 0 auto !important;
+}

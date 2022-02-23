@@ -1,0 +1,105 @@
+
+<div class="card flex flex-column align-items-center">
+  <div class="flex align-items-center justify-content-center font-bold text-blue-500 m-3 shadow-3" style="min-width: 450px; min-height: 320px">
+
+  <p-table [value]="listaTransferencias"  [scrollable]="true" scrollHeight="200px" [paginator]="true" [rows]="3" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [rowsPerPageOptions]="[3,5,50]">
+  <ng-template pTemplate="header">
+    <tr>
+        <th pSortableColumn="data">Data<p-sortIcon field="data"></p-sortIcon></th>
+        <th pSortableColumn="valor">Valor<p-sortIcon field="valor"></p-sortIcon></th>
+        <th pSortableColumn="destino">Destino<p-sortIcon field="destino"></p-sortIcon></th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-transferencia>
+    <tr>
+      <td>{{transferencia.data}}</td>
+      <td>{{transferencia.valor}}</td>
+      <td>{{transferencia.destino}}</td>
+
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="paginatorleft">
+    <p-button type="button" icon="pi pi-plus" routerLink="nova-transferencia" styleClass="p-button-text"></p-button>
+
+  </ng-template>
+
+  <ng-template pTemplate="paginatorright">
+    <p-button type="button" icon="pi pi-google" styleClass="p-button-text"></p-button>
+</ng-template>
+
+</p-table>
+
+</div>
+</div>
+
+
+<!--
+<div class="card flex flex-column align-items-center">
+  <div class="flex align-items-center justify-content-center font-bold text-blue-500 m-3 shadow-3"
+    style="min-width: 450px; min-height: 320px">
+
+    <p-table [value]="listaTransferencias" [(selection)]="selecionado1" dataKey="data" (onRowSelect)="onRowSelect($event)" (onRowUnselect)="onRowUnselect($event)">
+      <ng-template pTemplate="header">
+        <tr>
+          <th style="width: 3rem">
+            <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+          </th>
+          <th pSortableColumn="data">Data<p-sortIcon field="data"></p-sortIcon>
+          </th>
+          <th pSortableColumn="valor">Valor<p-sortIcon field="valor"></p-sortIcon>
+          </th>
+          <th pSortableColumn="destino">Destino<p-sortIcon field="destino"></p-sortIcon>
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-transferencia>
+        <tr>
+          <td>
+            <p-tableCheckbox [value]="transferencia"></p-tableCheckbox>
+          </td>
+          <td>{{transferencia.data}}</td>
+          <td>{{transferencia.valor}}</td>
+          <td>{{transferencia.destino}}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+
+  </div>
+</div>
+-->
+
+
+
+<div class="card flex flex-column align-items-center">
+  <div class="flex align-items-center justify-content-center font-bold text-blue-500 m-3 shadow-3"
+    style="min-width: 450px; min-height: 320px">
+
+    <p-table [value]="listaTransferencias" [(selection)]="selecionado1" dataKey="data" (onRowSelect)="onRowSelect($event)" (onRowUnselect)="onRowUnselect($event)">
+      <ng-template pTemplate="header">
+        <tr>
+          <th style="width: 3rem">
+            <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+          </th>
+          <th pSortableColumn="data">Data<p-sortIcon field="data"></p-sortIcon>
+          </th>
+          <th pSortableColumn="valor">Valor<p-sortIcon field="valor"></p-sortIcon>
+          </th>
+          <th pSortableColumn="destino">Destino<p-sortIcon field="destino"></p-sortIcon>
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-transferencia>
+        <tr>
+          <td>
+            <p-tableCheckbox [value]="transferencia"></p-tableCheckbox>
+          </td>
+          <td>{{transferencia.data}}</td>
+          <td>{{transferencia.valor}}</td>
+          <td>{{transferencia.destino}}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+
+  </div>
+</div>
+

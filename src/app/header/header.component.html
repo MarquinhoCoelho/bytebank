@@ -1,0 +1,27 @@
+<header>
+  <a routerLink="home" style="padding-top: 7px;">Marcos Coelho</a>
+
+
+
+  <p-sidebar [(visible)]="display" position="right" [baseZIndex]="10000">
+
+    <nav id="nav">
+      <ul >
+
+        <li><a routerLink="/home">Home</a></li>
+        <li><a routerLink="/extrato2">Extrato</a></li>
+        <li><a routerLink="/extrato">Backup</a></li>
+
+
+      </ul>
+    </nav>
+
+  </p-sidebar>
+
+
+
+  <p-button icon="pi pi-bars" (click)="display = true" styleClass="p-button-text" class="botaoBranco"></p-button>
+
+
+
+</header>
