@@ -18,6 +18,8 @@
 
 <!-- separador -->
 
+npm i
+
 
 <b> Em seguida volte para a pasta principal do projeto e no terminal execute o comando </b>
 
